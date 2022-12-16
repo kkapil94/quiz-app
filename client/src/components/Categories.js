@@ -30,10 +30,10 @@ export default function Categories() {
     <>
     <Box id='Categories'>
     <CatPop trigger={trigger} setTrigger={setTrigger} det={det}/>
-    <Typography  id='catText' variant="h4" component={"div"} sx={{fontFamily:"Montserrat,sans-serrif",marginTop:"6rem"}}>Explore By Category</Typography>
+    <Typography  id='catText' variant="h4" component={"div"} sx={{fontFamily:"Montserrat,sans-serrif",marginTop:"6rem",fontSize:{xl:'3rem'}}}>Explore By Category</Typography>
     <Stack direction={"row"} alignItems='center' justifyContent={'center'} sx={{width:"100%",marginTop:"2rem",flexWrap:"wrap"}}>
     {categories.map((category)=>(
-      <Card id="catCard" key={category.id} sx={{ margin:'1rem',width:'16rem' }} onClick={()=>handleClick(category.img,category.name,category.header)}>
+      <Card id="catCard" key={category.id} sx={{ margin:{lg:'1rem',xl:'2rem'},width:{lg:'16rem',xl:'20rem'},height:{xl:'15rem'} }} onClick={()=>handleClick(category.img,category.name,category.header)}>
         <CardActionArea>
           <CardMedia id='catImage' component="img" height="140" image={category.img}/>
           <CardContent>

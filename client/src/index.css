@@ -152,7 +152,7 @@
 }
 
 @media screen and (max-width:1010){
-  #option{
-    width:90vw
+  #options1{
+    width:100vw;
   }
 }

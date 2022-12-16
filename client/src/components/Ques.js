@@ -12,7 +12,7 @@ export default function Ques() {
   const [score,setScore] = useState(0)
   const [result,setResult] = useState(0)
   const [correct,setCorrect] = useState(0)
-  const style = {width:'18rem','&:hover':{border:'3px solid hsl(210deg 78% 25%)',background:'hsla(var(--qc-blue-100-h), var(--qc-blue-100-s), calc(var(--qc-blue-100-l) + 62%))'},border:"3px solid hsl(212deg 100% 90%)",marginBottom:'1rem'}
+  const style = {width:{lg:'18rem',md:'17rem',sm:'100%',xs:'100%'},'&:hover':{border:'3px solid hsl(210deg 78% 25%)',background:'hsla(var(--qc-blue-100-h), var(--qc-blue-100-s), calc(var(--qc-blue-100-l) + 62%))'},border:"3px solid hsl(212deg 100% 90%)",marginBottom:'1rem'}
   const urlDet = useStore(state=>state.urlDet)
   const apiDet = useStore(state=>state.Det)
   const url = `https://the-trivia-api.com/api/questions?categories=${apiDet[0].header}&limit=${urlDet[0].num}&difficulty=${urlDet[0].diff}`
@@ -86,18 +86,20 @@ export default function Ques() {
     <>
        {!result? (<Box sx={{position:'absolute',top:'4rem',width:'100vw',height:'calc(100vh - 4rem)'}}>
          <Container maxWidth="lg"  sx={{display:'flex',alignItems:'center',justifyContent:'center',height:'100%'}}>
-            <Card sx={{minHeight:'50%',width:'70%' ,display:'flex',  alignItems:'center',justifyContent:'center',flexDirection:'column',boxShadow:"0 0 16px rgba(0, 0, 0, 0.16)",border:'1px solid hsl(212deg 100% 90%)'}}>
-                <CardHeader title={<><Typography variant="h5" sx={{flexGrow:1,background:'#fff'}}>{apiDet[0].category} Quiz  </Typography><Typography variant='h6' sx={{marginTop:'.5rem'}}>{num} of {urlDet[0].num}</Typography></>} sx={{margin:0, borderBottom:'1px solid hsl(212deg 100% 90%)',width:'100%'}} action={<Typography variant='h6'>Score : {score}</Typography>} />
+            <Card sx={{minHeight:'50%',width:{lg:'70%',md:'70%',sm:'100vw',xs:'100vw'} ,display:'flex',  alignItems:'center',justifyContent:'center',flexDirection:'column',boxShadow:"0 0 16px rgba(0, 0, 0, 0.16)",border:'1px solid hsl(212deg 100% 90%)'}}>
+                <CardHeader title={<><Typography variant={'h6'} sx={{flexGrow:1,background:'#fff'}}>{apiDet[0].category} Quiz  </Typography><Typography variant='h6' sx={{marginTop:'.5rem'}}>{num} of {urlDet[0].num}</Typography></>} sx={{margin:0, borderBottom:'1px solid hsl(212deg 100% 90%)',width:'100%'}} action={<Typography variant='h6'>Score : {score}</Typography>} />
                 <CardContent sx={{background:'hsl(210deg 60% 98%)'}}>
-                    <Typography variant='h6' align='center' sx={{margin:'0 0 3rem 0'}}>{ques[index].question}</Typography>
-                    <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between',margin:'0 2rem 0 2rem',flexWrap:'wrap',borderBottom:'2px solid hsl(212deg 100% 90%)'}}>
+                    <Typography variant='h6' align='center' sx={{margin:{lg:'0 0 3rem 0',md:'0 0 2rem 0',sm:'0 0 1rem 0',xs:'0 0 0.5rem 0'}}}>{ques[index].question}</Typography>
+                    <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between',margin:{lg:'0 2rem 0 2rem',md:'0',sm:'0',xs:'0'},flexWrap:'wrap',borderBottom:{lg:'2px solid hsl(212deg 100% 90%)'}}}>
                         <Button id='options' variant='outlined' size='large' disabled={disable} ref={option} onClick={handleClick} sx={style} value={ques[index].correctAnswer}>{ques[index].correctAnswer}</Button>
                         <Button id='options' variant='outlined' size='large' ref={option2} disabled={disable}  onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[0]}>{ques[index].incorrectAnswers[0]}</Button>
                         <Button id='options' variant='outlined'size='large' disabled={disable} ref={option3}  onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[1]}>{ques[index].incorrectAnswers[1]}</Button>
                         <Button id='options' variant='outlined' size='large' disabled={disable} ref={option4} onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[2]}>{ques[index].incorrectAnswers[2]}</Button>
                     </Box>
                     <CardActions sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                      {!(num==urlDet[0].num)?(<Button variant='outlined' sx={{display}} onClick={handleClick2}>Next</Button>):(<Button variant='outlined' sx={{display}} onClick={handleClick3}>Result</Button>)}
+                    
+                      {// eslint-disable-next-line
+                      !(num==urlDet[0].num)?(<Button variant='outlined' sx={{display}} onClick={handleClick2}>Next</Button>):(<Button variant='outlined' sx={{display}} onClick={handleClick3}>Result</Button>)}
                     </CardActions>
                 </CardContent>
             </Card>

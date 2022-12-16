@@ -11,7 +11,6 @@ import {Link as Links} from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import { Drawer, Stack } from '@mui/material';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 function Navbar() {
 
     const navItems = ['Home' , 'Categories' , 'Contact Us']
@@ -31,13 +30,13 @@ function Navbar() {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, color:"#000",fontWeight:"600",cursor:'pointer' }}
+            sx={{ flexGrow: 1, color:"#000",fontWeight:"600",cursor:'pointer',fontSize:{xl:'2rem'} }}
           >
            <Link to='Home' smooth='true' duration='500'><Links to='/' style={{textDecoration:'none',color:'#000'}}>Quizzz</Links></Link>
           </Typography>
           <Box id='menu' sx={{marginRight:"2rem"}}>
             {navItems.map((item) => (
-              <Button key={item} sx={{color: '#000',marginRight:'1rem',textTransform:'none',fontFamily: 'Montserrat, sans-serif',fontWeight:"600"}}>
+              <Button key={item} sx={{color: '#000',marginRight:'1rem',textTransform:'none',fontFamily: 'Montserrat, sans-serif',fontWeight:"600",fontSize:{xl:'1.1rem'}}}>
                 <Link to={item} smooth={true} duration={500}><Links to='/' style={{textDecoration:'none',color:'#000'}}>{item}</Links></Link>
               </Button>
             ))}

@@ -10,21 +10,21 @@ export default function Footer() {
     <>
         <Box height='60vh' id='Contact Us' sx={{display:'flex',alignItems:'center',justifyContent:'center',background:'#354978',flexDirection:'column'}}>
             <Box sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                <img src="./images/pngegg.png" alt='' style={{width:"4rem",background:'#354978'}} />
-                <Typography  variant='h6' sx={{color:'#fff'}}>Quizzz</Typography>
+                <img src="./images/pngegg.png" alt='' style={{width:'4rem',background:'#354978'}} />
+                <Typography  variant={'h6'} sx={{color:'#fff',fontSize:{xl:'1.5rem'}}}>Quizzz</Typography>
             </Box>
             <Box display="flex" alignItems='center' justifyContent='center' sx={{margin:'1rem'}}>
                 <IconButton sx={{padding:0,margin:'0.5rem'}}>
-                    <FacebookIcon sx={{fontSize:'1.5rem',color:'#000',background:'#fff',borderRadius:'50%'}} />
+                    <FacebookIcon sx={{fontSize:{lg:'1.5rem',xl:'2.2rem'},color:'#000',background:'#fff',borderRadius:'50%'}} />
                 </IconButton>
                 <IconButton sx={{padding:0,margin:'0.5rem'}}>
-                 <TwitterIcon sx={{fontSize:'1.5rem',color:'#000',background:'#fff',borderRadius:'50%'}}/>
+                 <TwitterIcon sx={{fontSize:{lg:'1.5rem',xl:'2.2rem'},color:'#000',background:'#fff',borderRadius:'50%'}}/>
                 </IconButton>
                 <IconButton sx={{padding:0,margin:'0.5rem'}}>
-                <PinterestIcon sx={{fontSize:'1.5rem',color:'#000',background:'#fff',borderRadius:'50%'}}/>
+                <PinterestIcon sx={{fontSize:{lg:'1.5rem',xl:'2.2rem'},color:'#000',background:'#fff',borderRadius:'50%'}}/>
                 </IconButton>
                 <IconButton sx={{padding:0,margin:'0.5rem'}}>
-                <WhatsAppIcon sx={{fontSize:'1.5rem',color:'#000',background:'#fff',borderRadius:'50%'}}/>
+                <WhatsAppIcon sx={{fontSize:{lg:'1.5rem',xl:'2.2rem'},color:'#000',background:'#fff',borderRadius:'50%'}}/>
                 </IconButton>
             </Box>
             <Typography variant='subtitle2' sx={{color:"#fff"}}>© Quizzz All Right Reserved By KK Theme</Typography>
