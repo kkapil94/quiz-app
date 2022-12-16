@@ -2,7 +2,7 @@ import { Box, Card, CardActionArea, CardContent, CardMedia, Stack, Typography } 
 import React, { useState} from "react";
 import useStore from "../store/store";
 import CatPop from "./CatPop";
-
+import '../index.css'
 export default function Categories() {
   const categories = [
     {id:"1",name:"Art & Literature",header:'art_and_literature',img:"./images/Artnlit.webp"},
@@ -30,12 +30,12 @@ export default function Categories() {
     <>
     <Box id='Categories'>
     <CatPop trigger={trigger} setTrigger={setTrigger} det={det}/>
-    <Typography  variant="h4" component={"div"} sx={{fontFamily:"Montserrat,sans-serrif",marginTop:"6rem"}}>Explore By Category</Typography>
-    <Stack direction={"row"} sx={{width:"100%",marginTop:"2rem",flexWrap:"wrap"}}>
+    <Typography  id='catText' variant="h4" component={"div"} sx={{fontFamily:"Montserrat,sans-serrif",marginTop:"6rem"}}>Explore By Category</Typography>
+    <Stack direction={"row"} alignItems='center' justifyContent={'center'} sx={{width:"100%",marginTop:"2rem",flexWrap:"wrap"}}>
     {categories.map((category)=>(
-      <Card key={category.id} sx={{ maxWidth: 345,margin:'1rem',width:"16rem" }} onClick={()=>handleClick(category.img,category.name,category.header)}>
+      <Card id="catCard" key={category.id} sx={{ margin:'1rem',width:'16rem' }} onClick={()=>handleClick(category.img,category.name,category.header)}>
         <CardActionArea>
-          <CardMedia component="img" height="140" image={category.img}/>
+          <CardMedia id='catImage' component="img" height="140" image={category.img}/>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div" sx={{fontFamily:"Montserrat,sans-serrif"}}>
                 {category.name}

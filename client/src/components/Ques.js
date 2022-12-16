@@ -12,7 +12,7 @@ export default function Ques() {
   const [score,setScore] = useState(0)
   const [result,setResult] = useState(0)
   const [correct,setCorrect] = useState(0)
-  const style = {width:'20rem','&:hover':{border:'3px solid hsl(210deg 78% 25%)',background:'hsla(var(--qc-blue-100-h), var(--qc-blue-100-s), calc(var(--qc-blue-100-l) + 62%))'},border:"3px solid hsl(212deg 100% 90%)",marginBottom:'1rem'}
+  const style = {width:'18rem','&:hover':{border:'3px solid hsl(210deg 78% 25%)',background:'hsla(var(--qc-blue-100-h), var(--qc-blue-100-s), calc(var(--qc-blue-100-l) + 62%))'},border:"3px solid hsl(212deg 100% 90%)",marginBottom:'1rem'}
   const urlDet = useStore(state=>state.urlDet)
   const apiDet = useStore(state=>state.Det)
   const url = `https://the-trivia-api.com/api/questions?categories=${apiDet[0].header}&limit=${urlDet[0].num}&difficulty=${urlDet[0].diff}`
@@ -91,10 +91,10 @@ export default function Ques() {
                 <CardContent sx={{background:'hsl(210deg 60% 98%)'}}>
                     <Typography variant='h6' align='center' sx={{margin:'0 0 3rem 0'}}>{ques[index].question}</Typography>
                     <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between',margin:'0 2rem 0 2rem',flexWrap:'wrap',borderBottom:'2px solid hsl(212deg 100% 90%)'}}>
-                        <Button variant='outlined' size='large' disabled={disable} ref={option} onClick={handleClick} sx={style} value={ques[index].correctAnswer}>{ques[index].correctAnswer}</Button>
-                        <Button variant='outlined' size='large' ref={option2} disabled={disable}  onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[0]}>{ques[index].incorrectAnswers[0]}</Button>
-                        <Button variant='outlined'size='large' disabled={disable} ref={option3}  onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[1]}>{ques[index].incorrectAnswers[1]}</Button>
-                        <Button variant='outlined' size='large' disabled={disable} ref={option4} onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[2]}>{ques[index].incorrectAnswers[2]}</Button>
+                        <Button id='options' variant='outlined' size='large' disabled={disable} ref={option} onClick={handleClick} sx={style} value={ques[index].correctAnswer}>{ques[index].correctAnswer}</Button>
+                        <Button id='options' variant='outlined' size='large' ref={option2} disabled={disable}  onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[0]}>{ques[index].incorrectAnswers[0]}</Button>
+                        <Button id='options' variant='outlined'size='large' disabled={disable} ref={option3}  onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[1]}>{ques[index].incorrectAnswers[1]}</Button>
+                        <Button id='options' variant='outlined' size='large' disabled={disable} ref={option4} onClick={handleClick} sx={style} value={ques[index].incorrectAnswers[2]}>{ques[index].incorrectAnswers[2]}</Button>
                     </Box>
                     <CardActions sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
                       {!(num==urlDet[0].num)?(<Button variant='outlined' sx={{display}} onClick={handleClick2}>Next</Button>):(<Button variant='outlined' sx={{display}} onClick={handleClick3}>Result</Button>)}

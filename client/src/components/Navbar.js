@@ -8,35 +8,62 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import '../index.css'
 import {Link} from 'react-scroll'
 import {Link as Links} from 'react-router-dom'
-
+import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from 'react';
+import { Drawer, Stack } from '@mui/material';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 function Navbar() {
 
     const navItems = ['Home' , 'Categories' , 'Contact Us']
-
-  return (
-    <Box sx={{ display: 'flex',zIndex:1}}>
+    const [ham,setHam] = useState(false)
+    const handleHam = ()=>{
+      if(ham){
+        setHam(false)
+      }
+      else{
+        setHam(true)
+      }
+    }
+  return (<>
+    <Box sx={{ display: 'flex',zIndex:1,overflow:'hidden'}}>
       <AppBar component="nav"  sx={{backgroundColor:"#EFF6FE",zIndex:1}}>
         <Toolbar>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color:"#000",fontWeight:"600",cursor:'pointer' }}
+            sx={{ flexGrow: 1, color:"#000",fontWeight:"600",cursor:'pointer' }}
           >
            <Link to='Home' smooth='true' duration='500'><Links to='/' style={{textDecoration:'none',color:'#000'}}>Quizzz</Links></Link>
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' },marginRight:"2rem" }}>
+          <Box id='menu' sx={{marginRight:"2rem"}}>
             {navItems.map((item) => (
               <Button key={item} sx={{color: '#000',marginRight:'1rem',textTransform:'none',fontFamily: 'Montserrat, sans-serif',fontWeight:"600"}}>
                 <Link to={item} smooth={true} duration={500}><Links to='/' style={{textDecoration:'none',color:'#000'}}>{item}</Links></Link>
               </Button>
             ))}
           </Box>
-                <Button  sx={{color: '#000',marginRight:'1rem',textTransform:'none',fontFamily: 'Montserrat, sans-serif',fontWeight:"600"}}>
+                <Button  sx={{color: '#000',textTransform:'none',fontFamily: 'Montserrat, sans-serif',fontWeight:"600"}}>
                     Login<OpenInNewIcon sx={{fontSize:"medium"}}/>   
                 </Button>
+                <Button id='hamburger' onClick={handleHam}  sx={{color: '#000',textTransform:'none',display:'none',margin:'.5rem 0 0 1rem',fontFamily: 'Montserrat, sans-serif',fontWeight:"600",padding:'0',minWidth:'0'}}>
+                    <MenuIcon fontSize='medium'/>   
+                </Button>
+                
         </Toolbar>
       </AppBar>
       </Box>
+              <Drawer open={ham} onClose={()=>{setHam(false)}} anchor='right' >
+              <Box id='ham' sx={{marginRight:"2rem"}} width='15rem'>
+               {navItems.map((item) => (
+                <Stack direction='column' justifyContent='flex-start'>
+              <Button key={item} sx={{color: '#000',margin:'1.5rem',textTransform:'none',fontFamily: 'Montserrat, sans-serif',fontWeight:"600"}} >
+                <Link to={item} smooth={true} duration={500} onClick={handleHam}><Links to='/' style={{textDecoration:'none',color:'#000'}}>{item}</Links></Link>
+              </Button>
+              </Stack>
+            ))}
+          </Box>
+              </Drawer>
+          </>
   );
 }
 

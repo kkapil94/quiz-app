@@ -13,3 +13,146 @@
   text-transform:none;
   font-family: 'Montserrat', sans-serif;
 }
+
+@media (max-width: 1200px) and (min-width:1136px){
+  #catCard{
+    max-width: 15rem;
+  }
+  #postText{
+    font-size: 2.8rem;
+  }
+  #quizButton{
+    margin:2rem 0 0 4rem;
+  }
+}
+@media (max-width: 1136px) {
+  #catCard{
+    max-width: 14rem;
+  }
+  #postText{
+    font-size: 2.5rem;
+  }
+  #quizButton{
+    margin:2rem 0 0 4rem;
+  }
+  #homPost{
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1072px) {
+  #catCard{
+    max-width: 18rem;
+    margin : 1.5rem
+  }
+  #postText{
+    font-size: 2.2rem;
+  }
+  #quizText{
+    font-size: 15px;
+  }
+  #homPost{
+    margin-top:2.2rem
+  }
+}
+
+@media screen and (max-width:963px){
+  #postText{
+    font-size: 1.8rem;
+  }
+  #catCard{
+    max-width: 15rem;
+    margin:1.2rem;
+  }
+}
+
+@media screen and (max-width:899px){
+  #catCard{
+    min-width: 21rem;
+  }
+  #catImage{
+    height: 10rem;
+  }
+  #homPost{
+    min-width: 100%;
+    padding: 0rem 2rem 0rem 2rem;
+    margin: 0;
+  }
+  #container{
+    display:table;
+  }
+  #ele1{
+    display:table-footer-group;
+  }
+  #ele2{
+    display: table-header-group;
+  }
+}
+
+@media screen and (max-width:796px){
+  #catCard{
+    min-width: 18rem;
+    margin:1.2rem 2rem 1.2rem 2rem
+  }
+  #catImage{
+    height: 10rem;
+  }
+  #hamburger{
+    display: block;
+  }
+  #menu{
+    display: none;
+  }
+}
+
+@media screen and (max-width:500px){
+  #homPost{
+    padding: 0 1rem ;
+    margin: 0;
+  }
+  #postText{
+    padding:2rem 2rem
+  }
+  #quizText{
+    padding: 0 2rem 1rem 2rem;
+  }
+  #quizButton{
+    margin: 1rem 2rem 0 2rem;
+  }
+  #catText{
+    margin: 2rem 1rem 0 1rem ;
+  }
+}
+
+@media screen and (max-width:900px){
+  #cateCard{
+    width:50%;
+    height: 90vh;
+  }
+  #para{
+    font-size: 1rem;
+  }
+  /* #input{
+    width: 10%;
+    max-height: .5rem;
+  } */
+  #inputDiv1{
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  #inputDiv2{
+    margin:0
+  }
+}
+
+@media screen and (max-width:450px){
+  #quizBan{
+    width:90vw
+  }
+}
+
+@media screen and (max-width:1010){
+  #option{
+    width:90vw
+  }
+}

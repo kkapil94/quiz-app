@@ -8,7 +8,7 @@ import React from 'react'
 export default function Footer() {
   return (
     <>
-        <Box height='60vh' id='Contact' sx={{display:'flex',alignItems:'center',justifyContent:'center',background:'#354978',flexDirection:'column'}}>
+        <Box height='60vh' id='Contact Us' sx={{display:'flex',alignItems:'center',justifyContent:'center',background:'#354978',flexDirection:'column'}}>
             <Box sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
                 <img src="./images/pngegg.png" alt='' style={{width:"4rem",background:'#354978'}} />
                 <Typography  variant='h6' sx={{color:'#fff'}}>Quizzz</Typography>
