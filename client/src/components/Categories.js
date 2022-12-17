@@ -13,7 +13,7 @@ export default function Categories() {
     {id:"6",name:"History",img:"./images/history.jpg",header:"history"},
     {id:"7",name:"Music",img:"./images/music.webp",header:"music"},
     {id:"8",name:"Science",img:"./images/scienece.jpg",header:"science"},
-    {id:"9",name:"Society & Culture",img:"./images/society-and-culture.jpg",header:"society_and_culture"},
+    {id:"9",name:"Society & Culture",img:"./images/Society-and-Culture.jpg",header:"society_and_culture"},
     {id:"10",name:"Sport & Leisure",img:"./images/sport.jpg",header:"sport_and_leisure"}
   ]
   const [trigger, setTrigger] = useState()
