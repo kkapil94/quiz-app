@@ -18,10 +18,8 @@ export default function Categories() {
   ]
   const [trigger, setTrigger] = useState()
   const det = useStore(state=>state.Det)
-  console.log(det)
   const setData = useStore(state=>state.setDet)
   const handleClick = (img,category,header)=>{
-    console.log("i am clicked",header)
     setTrigger(true)
     setData({img,category,header})
   }

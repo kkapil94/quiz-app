@@ -29,7 +29,6 @@ export default function CatPop(props) {
     addDet(apidet)
   }
   
-  console.log(apidet)
   return props.trigger ? ( 
     <Box sx={{ width: "100vw", height: "100vh", background: "rgb(9 9 9 / 80%)", position: "fixed", top: 0, left: 0, right: 0, zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
       <Card id='cateCard'  sx={{ minWidth: '20rem'}}>

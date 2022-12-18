@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 function CircularProgressWithLabel(props) {
     const [score,setScore]=React.useState(0)
     const urlDet = useStore(state=>state.urlDet)
-    console.log(props.correct);
   return (
     <Card sx={{background:'aliceblue',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',width:'25rem'}}>
         <CardHeader title="Score"/>

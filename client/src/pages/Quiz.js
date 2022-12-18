@@ -8,9 +8,7 @@ import '../index.css'
 export default function Quiz() {
   const [dis,setDis] = useState(false)
     const urlDet = useStore(state=>(state.urlDet[0]));
-    console.log("uel",urlDet)
     const Det = useStore(state=>(state.Det[0]))
-    console.log("i amm",Det) 
   return !dis? (
         <Box sx={{position:'absolute',top:'4rem',width:'100vw',height:'calc(100vh - 4rem)',background:"#dcede6"}}>
             <Container maxWidth="lg"  sx={{display:'flex',alignItems:'center',justifyContent:'center',height:"100%"}}>
